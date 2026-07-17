@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>San Marco Pizza — Reset Password</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+      background: #F5EFE0;
+      color: #111112;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+      text-align: center;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      padding: 40px 32px;
+      max-width: 420px;
+      width: 100%;
+    }
+    .banner {
+      background: #B93A32;
+      color: #F5EFE0;
+      font-weight: 700;
+      font-size: 22px;
+      font-style: italic;
+      border-radius: 10px;
+      padding: 10px 0;
+      margin-bottom: 28px;
+    }
+    h1 { font-size: 20px; margin-bottom: 12px; }
+    p  { font-size: 15px; line-height: 1.5; margin-bottom: 10px; color: #444; }
+    .de { color: #777; font-size: 14px; }
+    .divider { border: none; border-top: 1px solid #eee; margin: 20px 0; }
+    .btn {
+      display: inline-block;
+      background: #2E7D32;
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 10px;
+      margin-top: 8px;
+    }
+    .error { color: #B93A32; font-weight: 600; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="banner">San Marco</div>
+
+    <!-- Shown while / after trying to open the app -->
+    <div id="open-app">
+      <h1>Reset your password</h1>
+      <p>Opening the San Marco Pizza app&hellip;</p>
+      <p>If nothing happens, tap the button below on the iPhone where you requested the reset.</p>
+      <p class="de">Öffne diesen Link auf dem iPhone, auf dem du das Zurücksetzen angefordert hast, und tippe auf den Button.</p>
+      <a id="open-btn" class="btn" href="#">Open the app / App öffnen</a>
+      <hr class="divider">
+      <p class="de">No app on this device? Open the email link on your iPhone with San Marco Pizza installed.<br>
+      Kein App auf diesem Gerät? Öffne den Link aus der E-Mail auf deinem iPhone mit der San-Marco-Pizza-App.</p>
+    </div>
+
+    <!-- Shown when the link is expired/invalid -->
+    <div id="link-error" class="hidden">
+      <h1>Link problem</h1>
+      <p class="error" id="error-text"></p>
+      <p>Please request a new password reset in the app.</p>
+      <p class="de">Bitte fordere in der App einen neuen Link zum Zurücksetzen an.</p>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var hash   = new URLSearchParams(window.location.hash.replace(/^#/, ''));
+
+      // Supabase reports expired/invalid links via error params.
+      var errDesc = params.get('error_description') || hash.get('error_description');
+      if (errDesc) {
+        document.getElementById('open-app').classList.add('hidden');
+        document.getElementById('link-error').classList.remove('hidden');
+        document.getElementById('error-text').textContent = errDesc;
+        return;
+      }
+
+      // Forward the entire query + fragment to the app so it can
+      // exchange the code for a recovery session.
+      var appUrl = 'sanmarcopizza://password-reset'
+        + window.location.search
+        + window.location.hash;
+
+      document.getElementById('open-btn').setAttribute('href', appUrl);
+
+      // Try automatically; the button stays as a manual fallback.
+      window.location.href = appUrl;
+    })();
+  </script>
+</body>
+</html>
