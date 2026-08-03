@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>San Marco Pizza – Mittelfeld</title>
+  <meta name="description" content="San Marco Pizza in Mittelfeld: Frische Pizza an Pizza-Tagen. Vorbestellen, Abholzeit wählen, ohne Warten abholen – mit der App.">
+  <meta name="theme-color" content="#C8402F">
+  <meta property="og:title" content="San Marco Pizza – Mittelfeld">
+  <meta property="og:description" content="Frische Pizza an Pizza-Tagen. Vorbestellen und ohne Warten abholen.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.pizzasanmarco.org/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍕</text></svg>">
+  <style>
+    :root {
+      --cream: #F5EFE0;
+      --ink: #2b2620;
+      --muted: #6f6555;
+      --tomato: #C8402F;
+      --tomato-dark: #A32D20;
+      --basil: #4C7A34;
+      --card: #fffdf8;
+      --line: #e7ddc8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header {
+      display: flex; align-items: center; gap: 12px;
+      padding: 20px; max-width: 960px; margin: 0 auto;
+    }
+    .logo { font-size: 30px; }
+    .brand { font-size: 20px; font-weight: 700; letter-spacing: .2px; }
+    .langtoggle {
+      margin-left: auto; display: inline-flex; border: 1px solid var(--line);
+      border-radius: 999px; overflow: hidden; background: var(--card);
+    }
+    .langtoggle button {
+      border: 0; background: transparent; cursor: pointer;
+      font: inherit; font-size: 13px; font-weight: 600; color: var(--muted);
+      padding: 6px 12px;
+    }
+    .langtoggle button.active { background: var(--tomato); color: #fff; }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 40px 20px 56px;
+      background: linear-gradient(160deg, var(--tomato), var(--tomato-dark));
+      color: #fff;
+      border-radius: 0 0 28px 28px;
+    }
+    .hero h1 { font-size: clamp(28px, 6vw, 46px); line-height: 1.1; margin-bottom: 14px; }
+    .hero p { font-size: clamp(16px, 2.6vw, 19px); opacity: .95; max-width: 620px; margin: 0 auto 26px; }
+    .btn {
+      display: inline-block; background: #fff; color: var(--tomato-dark);
+      font-weight: 700; text-decoration: none; padding: 14px 26px;
+      border-radius: 999px; box-shadow: 0 6px 18px rgba(0,0,0,.18);
+      transition: transform .12s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .hero small { display: block; margin-top: 12px; opacity: .85; font-size: 13px; }
+
+    /* Sections */
+    section { padding: 48px 0; }
+    h2 { font-size: clamp(22px, 4vw, 30px); text-align: center; margin-bottom: 28px; }
+
+    .steps, .features { display: grid; gap: 18px; }
+    .steps { grid-template-columns: repeat(3, 1fr); }
+    .features { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 640px) {
+      .steps, .features { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 18px; padding: 22px;
+    }
+    .card .num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 34px; height: 34px; border-radius: 999px;
+      background: var(--tomato); color: #fff; font-weight: 700; margin-bottom: 10px;
+    }
+    .card .ic { font-size: 26px; margin-bottom: 8px; }
+    .card h3 { font-size: 17px; margin-bottom: 6px; }
+    .card p { color: var(--muted); font-size: 15px; }
+
+    /* Location */
+    .location {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 18px; padding: 26px; text-align: center;
+    }
+    .location .pin { font-size: 30px; }
+    .location h3 { margin: 8px 0 4px; }
+    .location p { color: var(--muted); }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--line); margin-top: 24px;
+      padding: 28px 20px 40px; text-align: center; color: var(--muted); font-size: 14px;
+    }
+    footer a { color: var(--tomato-dark); text-decoration: none; margin: 0 10px; }
+    footer a:hover { text-decoration: underline; }
+    footer .copy { margin-top: 14px; font-size: 13px; opacity: .8; }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="logo" aria-hidden="true">🍕</span>
+    <span class="brand">San Marco Pizza</span>
+    <div class="langtoggle" role="group" aria-label="Language">
+      <button type="button" data-lang="de">DE</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <h1 data-de="Frische Pizza an Pizza-Tagen." data-en="Fresh pizza on Pizza Days."></h1>
+      <p data-de="Vorbestellen, Abholzeit wählen und ohne Warten abholen – ganz einfach mit unserer App."
+         data-en="Order ahead, pick your pick-up time, and skip the queue — all in our app."></p>
+      <!-- TODO: replace with your real App Store link -->
+      <a class="btn" href="‹APP_STORE_URL›" data-de="Im App Store laden" data-en="Download on the App Store"></a>
+      <small data-de="Für iPhone · kostenlos" data-en="For iPhone · free"></small>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section>
+      <h2 data-de="So funktioniert's" data-en="How it works"></h2>
+      <div class="steps">
+        <div class="card">
+          <span class="num">1</span>
+          <h3 data-de="Pizza-Tag wählen" data-en="Pick a Pizza Day"></h3>
+          <p data-de="Wir öffnen an bestimmten Pizza-Tagen. Öffne die App und tippe auf „Pizza bestellen&quot;."
+             data-en="We open on set Pizza Days. Open the app and tap “Order Pizza”."></p>
+        </div>
+        <div class="card">
+          <span class="num">2</span>
+          <h3 data-de="Abholzeit aussuchen" data-en="Choose a pick-up time"></h3>
+          <p data-de="Wähle deine Pizzen und eine freie Abholzeit. Du siehst sofort, wann alles fertig ist."
+             data-en="Choose your pizzas and a free pick-up time. You'll see exactly when it's all ready."></p>
+        </div>
+        <div class="card">
+          <span class="num">3</span>
+          <h3 data-de="Frisch abholen" data-en="Collect fresh"></h3>
+          <p data-de="Komm zur gewählten Zeit vorbei – deine Bestellung ist ofenfrisch bereit."
+             data-en="Come by at your chosen time — your order is ready, fresh from the oven."></p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-de="Warum die App?" data-en="Why the app?"></h2>
+      <div class="features">
+        <div class="card"><div class="ic" aria-hidden="true">⏰</div>
+          <h3 data-de="Live-Status" data-en="Live status"></h3>
+          <p data-de="Verfolge deine Bestellung – wir melden uns, sobald sie im Ofen und abholbereit ist."
+             data-en="Track your order — we'll ping you when it's in the oven and ready for pick-up."></p></div>
+        <div class="card"><div class="ic" aria-hidden="true">🔔</div>
+          <h3 data-de="Abhol-Erinnerung" data-en="Pick-up reminder"></h3>
+          <p data-de="Eine Erinnerung kurz vor der Abholzeit, damit du nichts verpasst."
+             data-en="A reminder shortly before your pick-up time, so you don't miss it."></p></div>
+        <div class="card"><div class="ic" aria-hidden="true">🥗</div>
+          <h3 data-de="Allergene auf einen Blick" data-en="Allergens at a glance"></h3>
+          <p data-de="Jede Pizza zeigt ihre EU-Allergene direkt in der App."
+             data-en="Every pizza shows its EU allergens right in the app."></p></div>
+        <div class="card"><div class="ic" aria-hidden="true">🥤</div>
+          <h3 data-de="Getränk dazu" data-en="Add a drink"></h3>
+          <p data-de="Nimm z. B. einen Aperol Spritz zur Abholung mit dazu."
+             data-en="Add a drink — like an Aperol Spritz — to pick up with your pizza."></p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="location">
+        <div class="pin" aria-hidden="true">📍</div>
+        <h3 data-de="Abholung" data-en="Pick-up"></h3>
+        <!-- TODO: confirm the public pickup address -->
+        <p>Mittelfeld 6</p>
+        <p data-de="Den nächsten Pizza-Tag findest du in der App."
+           data-en="Find the next Pizza Day in the app."></p>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div>
+      <a href="privacy.html" data-de="Datenschutz" data-en="Privacy"></a>
+      <a href="support.html" data-de="Support" data-en="Support"></a>
+      <a href="mailto:sanmarcopizza@icloud.com" data-de="Kontakt" data-en="Contact"></a>
+    </div>
+    <div class="copy">© <span id="y"></span> San Marco Pizza · Mittelfeld</div>
+  </footer>
+
+  <script>
+    (function () {
+      document.getElementById('y').textContent = new Date().getFullYear();
+
+      var STORAGE_KEY = 'smp-lang';
+      var buttons = document.querySelectorAll('.langtoggle button');
+
+      function apply(lang) {
+        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-' + lang + ']').forEach(function (el) {
+          el.textContent = el.getAttribute('data-' + lang);
+        });
+        buttons.forEach(function (b) {
+          b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+        });
+        try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+      }
+
+      var saved;
+      try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+      var initial = saved || ((navigator.language || 'de').toLowerCase().indexOf('en') === 0 ? 'en' : 'de');
+      apply(initial);
+
+      buttons.forEach(function (b) {
+        b.addEventListener('click', function () { apply(b.getAttribute('data-lang')); });
+      });
+    })();
+  </script>
+</body>
+</html>
