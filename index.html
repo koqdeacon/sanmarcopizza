@@ -1,69 +1,234 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="de">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Description" content="San Marco Pizza in Mittelfeld: Frische Pizza an Pizza-Tagen. Vorbestellen, Abholzeit wählen, ohne Warten abholen – mit der App.">
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.6">
-  <style type="text/css">
-    body {background-color: #f2ebd9}
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 30.0px '.Apple Color Emoji UI'; color: #201d18; -webkit-text-stroke: #201d18}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #201d18; -webkit-text-stroke: #201d18}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 13.0px '.SF NS'; color: #5c5243; -webkit-text-stroke: #5c5243}
-    p.p5 {margin: 0.0px 50.0px 26.0px 50.0px; text-align: center; text-indent: -50.0px; font: 19.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 12.0px 'Helvetica Neue'; color: #901d19; -webkit-text-stroke: #901d19}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 13.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff}
-    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff}
-    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px 'Helvetica Neue'; color: #5c5243; -webkit-text-stroke: #5c5243}
-    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 26.0px '.Apple Color Emoji UI'; color: #201d18; -webkit-text-stroke: #201d18}
-    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 30.0px '.Apple Color Emoji UI'; color: #201d18; -webkit-text-stroke: #201d18}
-    p.p15 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 12.0px 'Helvetica Neue'; color: #5c5243; -webkit-text-stroke: #5c5243}
-    p.p16 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 14.0px 'Helvetica Neue'; color: #5c5243; -webkit-text-stroke: #5c5243; min-height: 17.0px}
-    p.p17 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 13.0px 'Helvetica Neue'; color: #5c5243; -webkit-text-stroke: #5c5243}
-    span.s1 {font-kerning: none}
-    span.s2 {font-kerning: none; background-color: #fffdf6}
-    span.s3 {font-kerning: none; background-color: #ffffff}
-    span.s4 {font-kerning: none; background-color: #ba2c24}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>San Marco Pizza – Mittelfeld</title>
+  <meta name="description" content="San Marco Pizza in Mittelfeld: Frische Pizza an Pizza-Tagen. Vorbestellen, Abholzeit wählen, ohne Warten abholen – mit der App.">
+  <meta name="theme-color" content="#C8402F">
+  <meta property="og:title" content="San Marco Pizza – Mittelfeld">
+  <meta property="og:description" content="Frische Pizza an Pizza-Tagen. Vorbestellen und ohne Warten abholen.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.pizzasanmarco.org/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍕</text></svg>">
+  <style>
+    :root {
+      --cream: #F5EFE0;
+      --ink: #2b2620;
+      --muted: #6f6555;
+      --tomato: #C8402F;
+      --tomato-dark: #A32D20;
+      --basil: #4C7A34;
+      --card: #fffdf8;
+      --line: #e7ddc8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header {
+      display: flex; align-items: center; gap: 12px;
+      padding: 20px; max-width: 960px; margin: 0 auto;
+    }
+    .logo { font-size: 30px; }
+    .brand { font-size: 20px; font-weight: 700; letter-spacing: .2px; }
+    .langtoggle {
+      margin-left: auto; display: inline-flex; border: 1px solid var(--line);
+      border-radius: 999px; overflow: hidden; background: var(--card);
+    }
+    .langtoggle button {
+      border: 0; background: transparent; cursor: pointer;
+      font: inherit; font-size: 13px; font-weight: 600; color: var(--muted);
+      padding: 6px 12px;
+    }
+    .langtoggle button.active { background: var(--tomato); color: #fff; }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 40px 20px 56px;
+      background: linear-gradient(160deg, var(--tomato), var(--tomato-dark));
+      color: #fff;
+      border-radius: 0 0 28px 28px;
+    }
+    .hero h1 { font-size: clamp(28px, 6vw, 46px); line-height: 1.1; margin-bottom: 14px; }
+    .hero p { font-size: clamp(16px, 2.6vw, 19px); opacity: .95; max-width: 620px; margin: 0 auto 26px; }
+    .btn {
+      display: inline-block; background: #fff; color: var(--tomato-dark);
+      font-weight: 700; text-decoration: none; padding: 14px 26px;
+      border-radius: 999px; box-shadow: 0 6px 18px rgba(0,0,0,.18);
+      transition: transform .12s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .hero small { display: block; margin-top: 12px; opacity: .85; font-size: 13px; }
+
+    /* Sections */
+    section { padding: 48px 0; }
+    h2 { font-size: clamp(22px, 4vw, 30px); text-align: center; margin-bottom: 28px; }
+
+    .steps, .features { display: grid; gap: 18px; }
+    .steps { grid-template-columns: repeat(3, 1fr); }
+    .features { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 640px) {
+      .steps, .features { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 18px; padding: 22px;
+    }
+    .card .num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 34px; height: 34px; border-radius: 999px;
+      background: var(--tomato); color: #fff; font-weight: 700; margin-bottom: 10px;
+    }
+    .card .ic { font-size: 26px; margin-bottom: 8px; }
+    .card h3 { font-size: 17px; margin-bottom: 6px; }
+    .card p { color: var(--muted); font-size: 15px; }
+
+    /* Location */
+    .location {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 18px; padding: 26px; text-align: center;
+    }
+    .location .pin { font-size: 30px; }
+    .location h3 { margin: 8px 0 4px; }
+    .location p { color: var(--muted); }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--line); margin-top: 24px;
+      padding: 28px 20px 40px; text-align: center; color: var(--muted); font-size: 14px;
+    }
+    footer a { color: var(--tomato-dark); text-decoration: none; margin: 0 10px; }
+    footer a:hover { text-decoration: underline; }
+    footer .copy { margin-top: 14px; font-size: 13px; opacity: .8; }
   </style>
 </head>
 <body>
-<p class="p1"><span class="s1">🍕</span></p>
-<p class="p2"><span class="s1"><b>San Marco Pizza</b></span></p>
-<p class="p3"><span class="s2"><b>DE</b><b></b></span></p>
-<p class="p3"><span class="s2"><b>EN</b><b></b></span></p>
-<h1 style="margin: 0.0px 0.0px 14.0px 0.0px; text-align: center; font: 46.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s1"><b>Frische Pizza an Pizza-Tagen.</b></span></h1>
-<p class="p5"><span class="s1">Vorbestellen, Abholzeit wählen und ohne Warten abholen – ganz einfach mit unserer App.</span></p>
-<p class="p6"><span class="s3"><a href="file:///Users/marco/Documents/Coding/PizzaCompany/webpage/%E2%80%B9APP_STORE_URL%E2%80%BA"><b>Im App Store laden</b><span class="s1"><b></b></span></a></span></p>
-<p class="p7"><span class="s1">Für iPhone · kostenlos</span></p>
-<h2 style="margin: 0.0px 0.0px 28.0px 0.0px; text-align: center; font: 30.0px 'Helvetica Neue'; color: #201d18; -webkit-text-stroke: #201d18"><span class="s1"><b>So funktioniert's</b></span></h2>
-<p class="p9"><span class="s4"><b>1</b><b></b></span></p>
-<h3 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 17.0px 'Helvetica Neue'; color: #201d18; -webkit-text-stroke: #201d18"><span class="s2"><b>Pizza-Tag wählen</b><b></b></span></h3>
-<p class="p11"><span class="s2">Wir öffnen an bestimmten Pizza-Tagen. Öffne die App und tippe auf „Pizza bestellen".</span></p>
-<p class="p9"><span class="s4"><b>2</b><b></b></span></p>
-<h3 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 17.0px 'Helvetica Neue'; color: #201d18; -webkit-text-stroke: #201d18"><span class="s2"><b>Abholzeit aussuchen</b><b></b></span></h3>
-<p class="p11"><span class="s2">Wähle deine Pizzen und eine freie Abholzeit. Du siehst sofort, wann alles fertig ist.</span></p>
-<p class="p9"><span class="s4"><b>3</b><b></b></span></p>
-<h3 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 17.0px 'Helvetica Neue'; color: #201d18; -webkit-text-stroke: #201d18"><span class="s2"><b>Frisch abholen</b><b></b></span></h3>
-<p class="p11"><span class="s2">Komm zur gewählten Zeit vorbei – deine Bestellung ist ofenfrisch bereit.</span></p>
-<h2 style="margin: 0.0px 0.0px 28.0px 0.0px; text-align: center; font: 30.0px 'Helvetica Neue'; color: #201d18; -webkit-text-stroke: #201d18"><span class="s1"><b>Warum die App?</b></span></h2>
-<p class="p12"><span class="s2">⏰</span></p>
-<h3 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 17.0px 'Helvetica Neue'; color: #201d18; -webkit-text-stroke: #201d18"><span class="s2"><b>Live-Status</b><b></b></span></h3>
-<p class="p11"><span class="s2">Verfolge deine Bestellung – wir melden uns, sobald sie im Ofen und abholbereit ist.</span></p>
-<p class="p12"><span class="s2">🔔</span></p>
-<h3 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 17.0px 'Helvetica Neue'; color: #201d18; -webkit-text-stroke: #201d18"><span class="s2"><b>Abhol-Erinnerung</b><b></b></span></h3>
-<p class="p11"><span class="s2">Eine Erinnerung kurz vor der Abholzeit, damit du nichts verpasst.</span></p>
-<p class="p12"><span class="s2">🥗</span></p>
-<h3 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 17.0px 'Helvetica Neue'; color: #201d18; -webkit-text-stroke: #201d18"><span class="s2"><b>Allergene auf einen Blick</b><b></b></span></h3>
-<p class="p11"><span class="s2">Jede Pizza zeigt ihre EU-Allergene direkt in der App.</span></p>
-<p class="p12"><span class="s2">🥤</span></p>
-<h3 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 17.0px 'Helvetica Neue'; color: #201d18; -webkit-text-stroke: #201d18"><span class="s2"><b>Getränk dazu</b><b></b></span></h3>
-<p class="p11"><span class="s2">Nimm z. B. einen Aperol Spritz zur Abholung mit dazu.</span></p>
-<p class="p13"><span class="s2">📍</span></p>
-<h3 style="margin: 0.0px 0.0px 4.0px 0.0px; text-align: center; font: 14.0px 'Helvetica Neue'; color: #201d18; -webkit-text-stroke: #201d18"><span class="s2"><b>Abholung</b><b></b></span></h3>
-<p class="p15"><span class="s2">Den nächsten Pizza-Tag findest du in der App.</span></p>
-<p class="p16"><span class="s1"></span><br></p>
-<p class="p17"><span class="s1">© San Marco Pizza</span></p>
+  <header>
+    <span class="logo" aria-hidden="true">🍕</span>
+    <span class="brand">San Marco Pizza</span>
+    <div class="langtoggle" role="group" aria-label="Language">
+      <button type="button" data-lang="de">DE</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <h1 data-de="Frische Pizza an Pizza-Tagen." data-en="Fresh pizza on Pizza Days.">Frische Pizza an Pizza-Tagen.</h1>
+      <p data-de="Vorbestellen, Abholzeit wählen und ohne Warten abholen – ganz einfach mit unserer App."
+         data-en="Order ahead, pick your pick-up time, and skip the queue — all in our app.">Vorbestellen, Abholzeit wählen und ohne Warten abholen – ganz einfach mit unserer App.</p>
+      <!-- TODO: replace with your real App Store link -->
+      <a class="btn" href="‹APP_STORE_URL›" data-de="Im App Store laden" data-en="Download on the App Store">Im App Store laden</a>
+      <small data-de="Für iPhone · kostenlos" data-en="For iPhone · free">Für iPhone · kostenlos</small>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section>
+      <h2 data-de="So funktioniert's" data-en="How it works">So funktioniert's</h2>
+      <div class="steps">
+        <div class="card">
+          <span class="num">1</span>
+          <h3 data-de="Pizza-Tag wählen" data-en="Pick a Pizza Day">Pizza-Tag wählen</h3>
+          <p data-de="Wir öffnen an bestimmten Pizza-Tagen. Öffne die App und tippe auf „Pizza bestellen&quot;."
+             data-en="We open on set Pizza Days. Open the app and tap “Order Pizza”.">Wir öffnen an bestimmten Pizza-Tagen. Öffne die App und tippe auf „Pizza bestellen".</p>
+        </div>
+        <div class="card">
+          <span class="num">2</span>
+          <h3 data-de="Abholzeit aussuchen" data-en="Choose a pick-up time">Abholzeit aussuchen</h3>
+          <p data-de="Wähle deine Pizzen und eine freie Abholzeit. Du siehst sofort, wann alles fertig ist."
+             data-en="Choose your pizzas and a free pick-up time. You'll see exactly when it's all ready.">Wähle deine Pizzen und eine freie Abholzeit. Du siehst sofort, wann alles fertig ist.</p>
+        </div>
+        <div class="card">
+          <span class="num">3</span>
+          <h3 data-de="Frisch abholen" data-en="Collect fresh">Frisch abholen</h3>
+          <p data-de="Komm zur gewählten Zeit vorbei – deine Bestellung ist ofenfrisch bereit."
+             data-en="Come by at your chosen time — your order is ready, fresh from the oven.">Komm zur gewählten Zeit vorbei – deine Bestellung ist ofenfrisch bereit.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-de="Warum die App?" data-en="Why the app?">Warum die App?</h2>
+      <div class="features">
+        <div class="card"><div class="ic" aria-hidden="true">⏰</div>
+          <h3 data-de="Live-Status" data-en="Live status">Live-Status</h3>
+          <p data-de="Verfolge deine Bestellung – wir melden uns, sobald sie im Ofen und abholbereit ist."
+             data-en="Track your order — we'll ping you when it's in the oven and ready for pick-up.">Verfolge deine Bestellung – wir melden uns, sobald sie im Ofen und abholbereit ist.</p></div>
+        <div class="card"><div class="ic" aria-hidden="true">🔔</div>
+          <h3 data-de="Abhol-Erinnerung" data-en="Pick-up reminder">Abhol-Erinnerung</h3>
+          <p data-de="Eine Erinnerung kurz vor der Abholzeit, damit du nichts verpasst."
+             data-en="A reminder shortly before your pick-up time, so you don't miss it.">Eine Erinnerung kurz vor der Abholzeit, damit du nichts verpasst.</p></div>
+        <div class="card"><div class="ic" aria-hidden="true">🥗</div>
+          <h3 data-de="Allergene auf einen Blick" data-en="Allergens at a glance">Allergene auf einen Blick</h3>
+          <p data-de="Jede Pizza zeigt ihre EU-Allergene direkt in der App."
+             data-en="Every pizza shows its EU allergens right in the app.">Jede Pizza zeigt ihre EU-Allergene direkt in der App.</p></div>
+        <div class="card"><div class="ic" aria-hidden="true">🥤</div>
+          <h3 data-de="Getränk dazu" data-en="Add a drink">Getränk dazu</h3>
+          <p data-de="Nimm z. B. einen Aperol Spritz zur Abholung mit dazu."
+             data-en="Add a drink — like an Aperol Spritz — to pick up with your pizza.">Nimm z. B. einen Aperol Spritz zur Abholung mit dazu.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="location">
+        <div class="pin" aria-hidden="true">📍</div>
+        <h3 data-de="Abholung" data-en="Pick-up">Abholung</h3>
+        <!-- TODO: confirm the public pickup address -->
+        <p>Mittelfeld 6</p>
+        <p data-de="Den nächsten Pizza-Tag findest du in der App."
+           data-en="Find the next Pizza Day in the app.">Den nächsten Pizza-Tag findest du in der App.</p>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div>
+      <a href="privacy.html" data-de="Datenschutz" data-en="Privacy">Datenschutz</a>
+      <a href="support.html" data-de="Support" data-en="Support">Support</a>
+      <a href="mailto:sanmarcopizza@icloud.com" data-de="Kontakt" data-en="Contact">Kontakt</a>
+    </div>
+    <div class="copy">© <span id="y"></span> San Marco Pizza · Mittelfeld</div>
+  </footer>
+
+  <script>
+    (function () {
+      document.getElementById('y').textContent = new Date().getFullYear();
+
+      var STORAGE_KEY = 'smp-lang';
+      var buttons = document.querySelectorAll('.langtoggle button');
+
+      function apply(lang) {
+        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-' + lang + ']').forEach(function (el) {
+          el.textContent = el.getAttribute('data-' + lang);
+        });
+        buttons.forEach(function (b) {
+          b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+        });
+        try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+      }
+
+      var saved;
+      try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+      var initial = saved || ((navigator.language || 'de').toLowerCase().indexOf('en') === 0 ? 'en' : 'de');
+      apply(initial);
+
+      buttons.forEach(function (b) {
+        b.addEventListener('click', function () { apply(b.getAttribute('data-lang')); });
+      });
+    })();
+  </script>
 </body>
 </html>
