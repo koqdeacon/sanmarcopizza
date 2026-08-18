@@ -41,7 +41,7 @@
     .logo { font-size: 30px; }
     .brand { font-size: 20px; font-weight: 700; letter-spacing: .2px; }
     .langtoggle {
-      margin-left: auto; display: inline-flex; border: 1px solid var(--line);
+      display: inline-flex; border: 1px solid var(--line);
       border-radius: 999px; overflow: hidden; background: var(--card);
     }
     .langtoggle button {
@@ -103,6 +103,30 @@
     .location h3 { margin: 8px 0 4px; }
     .location p { color: var(--muted); }
 
+    /* Detailed walkthrough */
+    .detail { padding: 56px 0; }
+    .detail.alt { background: var(--card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .detail-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .detail-inner.reverse .art { order: 2; }
+    .detail-inner.reverse .copy { order: 1; }
+    .detail .num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 999px; background: var(--tomato); color: #fff; font-weight: 700; font-size: 14px; margin-bottom: 12px; }
+    .detail .copy h3 { font-size: 24px; margin-bottom: 12px; }
+    .detail .copy p { font-size: 16px; color: var(--muted); margin-bottom: 12px; }
+    .detail .copy p:last-child { margin-bottom: 0; }
+    .detail .copy strong { color: var(--ink); }
+    .art { display: flex; justify-content: center; }
+    .art img { width: 240px; height: auto; display: block; border-radius: 24px; box-shadow: 0 12px 32px rgba(0,0,0,.16); }
+    .shot { width: 240px; border-radius: 24px; overflow: hidden; box-shadow: 0 12px 32px rgba(0,0,0,.14); }
+    .shot img { width: 100%; height: auto; display: block; border-radius: 0; box-shadow: none; }
+    .two-up { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+    .two-up figure { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .two-up figcaption { font-size: 14px; color: var(--muted); text-align: center; max-width: 240px; }
+    @media (max-width: 700px) {
+      .detail-inner, .detail-inner.reverse { grid-template-columns: 1fr; }
+      .detail-inner.reverse .art, .detail-inner.reverse .copy { order: initial; }
+      .two-up { grid-template-columns: 1fr; }
+    }
+
     /* Footer */
     footer {
       border-top: 1px solid var(--line); margin-top: 24px;
@@ -117,6 +141,7 @@
   <header>
     <span class="logo" aria-hidden="true">🍕</span>
     <span class="brand">San Marco Pizza</span>
+    <a href="#details" data-de="So funktioniert's im Detail" data-en="How it works, in detail" style="margin-left:auto; font-size:14px; font-weight:600; color:var(--muted); text-decoration:none;">So funktioniert's im Detail</a>
     <div class="langtoggle" role="group" aria-label="Language">
       <button type="button" data-lang="de">DE</button>
       <button type="button" data-lang="en">EN</button>
@@ -192,6 +217,81 @@
     </section>
   </div>
 
+  <div id="details">
+    <div class="detail">
+      <div class="wrap detail-inner">
+        <div class="copy">
+          <div class="num">1</div>
+          <h3 data-de="Anmeldung" data-en="Sign in">Anmeldung</h3>
+          <p data-de="Neue und wiederkehrende Kunden landen auf einem einfachen Anmeldebildschirm. Bestehende Kunden geben E-Mail und Passwort ein; neue Kunden tippen auf &quot;Konto erstellen&quot;, um sich zu registrieren." data-en="New and returning customers land on a simple sign-in screen. Existing customers enter their email and password; new customers tap &quot;Create an account&quot; to register.">Neue und wiederkehrende Kunden landen auf einem einfachen Anmeldebildschirm. Bestehende Kunden geben E-Mail und Passwort ein; neue Kunden tippen auf "Konto erstellen", um sich zu registrieren.</p>
+          <p data-de="Noch kein Konto? Tippe auf &lt;strong&gt;&quot;Menü ansehen&quot;&lt;/strong&gt;, um das Angebot zu sehen, bevor du dich anmeldest – dafür ist kein Login nötig." data-en="No account yet? Tap &lt;strong&gt;&quot;Browse the menu&quot;&lt;/strong&gt; to see what's on offer before signing up – no login required just to look.">Noch kein Konto? Tippe auf <strong>"Menü ansehen"</strong>, um das Angebot zu sehen, bevor du dich anmeldest – dafür ist kein Login nötig.</p>
+          <p data-de="Ein Konto allein reicht nicht zum Bestellen – Kunden müssen auch Mitglied einer Pizzeria sein. Der Beitritt erfolgt durch Scannen der &lt;strong&gt;QR-Karte&lt;/strong&gt; der Pizzeria oder durch Eingabe eines &lt;strong&gt;Aktionscodes&lt;/strong&gt;. Beides geht direkt nach der Anmeldung oder später über &quot;Code einlösen&quot; im Profil." data-en="An account alone isn't enough to order – customers also need to belong to a pizzeria. They join by scanning the pizzeria's &lt;strong&gt;QR card&lt;/strong&gt; or entering a &lt;strong&gt;promo code&lt;/strong&gt;. Either can be done right after signing up, or later from &quot;Redeem Code&quot; in their profile.">Ein Konto allein reicht nicht zum Bestellen – Kunden müssen auch Mitglied einer Pizzeria sein. Der Beitritt erfolgt durch Scannen der <strong>QR-Karte</strong> der Pizzeria oder durch Eingabe eines <strong>Aktionscodes</strong>. Beides geht direkt nach der Anmeldung oder später über "Code einlösen" im Profil.</p>
+        </div>
+        <div class="art"><img src="shots/signin.jpg" width="240" height="521" loading="lazy" data-de-alt="Anmeldebildschirm" data-en-alt="Sign in screen" alt="Anmeldebildschirm"></div>
+      </div>
+    </div>
+
+    <div class="detail alt">
+      <div class="wrap">
+        <div style="text-align:center; margin-bottom:36px;">
+          <div class="num" style="margin:0 auto 12px;">2</div>
+          <h3 data-de="Eine Bestellung aufgeben" data-en="Placing an order" style="font-size:24px; margin-bottom:12px;">Eine Bestellung aufgeben</h3>
+          <p data-de="Vom Startbildschirm aus tippen Kunden auf &quot;Pizza bestellen&quot; oder &quot;Menü&quot;, um das Angebot zu durchsuchen und ihre Bestellung zusammenzustellen." data-en="From the home screen, customers tap &quot;Order Pizza&quot; or &quot;Menu&quot; to browse what's available and build their order." style="color:var(--muted); max-width:600px; margin:0 auto;">Vom Startbildschirm aus tippen Kunden auf "Pizza bestellen" oder "Menü", um das Angebot zu durchsuchen und ihre Bestellung zusammenzustellen.</p>
+        </div>
+        <div class="two-up">
+          <figure>
+            <div class="shot">
+              <img src="shots/menu.jpg" width="240" height="521" loading="lazy" alt="Menü">
+            </div>
+            <figcaption data-de="Das Menü listet jede Pizza mit Zutaten und Allergenen sowie den wählbaren Größen." data-en="The menu lists each pizza with ingredients and allergens, and sizes to choose from.">Das Menü listet jede Pizza mit Zutaten und Allergenen sowie den wählbaren Größen.</figcaption>
+          </figure>
+          <figure>
+            <div class="shot">
+              <img src="shots/myorders.jpg" width="240" height="521" loading="lazy" alt="Meine Bestellungen">
+            </div>
+            <figcaption data-de="Nach der Bestellung erscheint sie unter &quot;Meine Bestellungen&quot; als bevorstehend, mit Abholzeit." data-en="Once placed, the order shows up under &quot;My Orders&quot; as Upcoming, with the pickup time.">Nach der Bestellung erscheint sie unter "Meine Bestellungen" als bevorstehend, mit Abholzeit.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail">
+      <div class="wrap detail-inner reverse">
+        <div class="copy">
+          <div class="num">3</div>
+          <h3 data-de="Pizza-Tage" data-en="Pizza Days">Pizza-Tage</h3>
+          <p data-de="Ein Pizza-Tag ist ein geplantes gemeinsames Back-Event, nicht nur ein Bestellfenster. Der Startbildschirm zeigt ihn als große Karte: Datum, Gastgeber, Abholort und eine Notiz. Sind mehrere Tage geplant, wischen Kunden zwischen ihnen hin und her." data-en="A Pizza Day is a scheduled communal baking event, not just an order window. The home screen shows it as a hero card: the date, who's hosting, the pick-up location, and any note. When more than one day is scheduled, customers swipe between them.">Ein Pizza-Tag ist ein geplantes gemeinsames Back-Event, nicht nur ein Bestellfenster. Der Startbildschirm zeigt ihn als große Karte: Datum, Gastgeber, Abholort und eine Notiz. Sind mehrere Tage geplant, wischen Kunden zwischen ihnen hin und her.</p>
+          <p data-de="Bestellen und Teilnehmen sind zwei getrennte Dinge. Ein Tipp auf &lt;strong&gt;&quot;Pizza bestellen&quot;&lt;/strong&gt; startet den Bestellvorgang. Ein Tipp auf &quot;Wer kommt&quot; öffnet die Detailseite, wo Kunden mit &lt;strong&gt;&quot;Ich komme!&quot;&lt;/strong&gt; zusagen können – ihr Name und Foto werden dann für andere Mitglieder sichtbar." data-en="Ordering and attending are two separate things. Tapping &lt;strong&gt;&quot;Order Pizza&quot;&lt;/strong&gt; starts the order flow. Tapping &quot;See who's coming&quot; opens the day's detail page, where customers can tap &lt;strong&gt;&quot;I'm coming!&quot;&lt;/strong&gt; to RSVP – their name and photo become visible to other members.">Bestellen und Teilnehmen sind zwei getrennte Dinge. Ein Tipp auf <strong>"Pizza bestellen"</strong> startet den Bestellvorgang. Ein Tipp auf "Wer kommt" öffnet die Detailseite, wo Kunden mit <strong>"Ich komme!"</strong> zusagen können – ihr Name und Foto werden dann für andere Mitglieder sichtbar.</p>
+          <p data-de="Jeder Tag hat seine eigene Bestellfrist und Stornofrist, beide direkt auf der Karte sichtbar. Ein neuer Pizza-Tag erscheint außerdem als Ankündigungsbanner auf dem Startbildschirm." data-en="Each day carries its own order deadline and cancellation window, both spelled out on the card. A new Pizza Day also surfaces as an announcement banner on the home screen.">Jeder Tag hat seine eigene Bestellfrist und Stornofrist, beide direkt auf der Karte sichtbar. Ein neuer Pizza-Tag erscheint außerdem als Ankündigungsbanner auf dem Startbildschirm.</p>
+        </div>
+        <div class="art"><img src="shots/home.jpg" width="240" height="521" loading="lazy" alt="Startbildschirm mit nächstem Pizza-Tag"></div>
+      </div>
+    </div>
+
+    <div class="detail alt">
+      <div class="wrap detail-inner">
+        <div class="copy">
+          <div class="num">4</div>
+          <h3 data-de="Profil &amp; Einstellungen" data-en="Profile &amp; Settings">Profil &amp; Einstellungen</h3>
+          <p data-de="&quot;Mein Profil&quot; enthält Name, Profilfoto und die E-Mail-Adresse des Kontos. Hier können Kunden ihr Passwort ändern und ihr Konto endgültig löschen." data-en="&quot;My Profile&quot; holds a name, a profile photo, and the account's email. From here customers can change their password, and permanently delete their account.">"Mein Profil" enthält Name, Profilfoto und die E-Mail-Adresse des Kontos. Hier können Kunden ihr Passwort ändern und ihr Konto endgültig löschen.</p>
+          <p data-de="&lt;strong&gt;Meine Pizzerien&lt;/strong&gt; listet jede Pizzeria auf, der der Kunde beigetreten ist, mit einer Wisch-Funktion zum Verlassen. Der Einstiegspunkt &quot;Pizzeria beitreten oder gründen&quot; findet sich auch hier." data-en="&lt;strong&gt;My Pizzerias&lt;/strong&gt; lists every pizzeria the customer has joined, with a swipe-to-leave action. The &quot;Join or start a pizzeria&quot; entry point lives here too."><strong>Meine Pizzerien</strong> listet jede Pizzeria auf, der der Kunde beigetreten ist, mit einer Wisch-Funktion zum Verlassen. Der Einstiegspunkt "Pizzeria beitreten oder gründen" findet sich auch hier.</p>
+          <p data-de="&lt;strong&gt;Benachrichtigungen&lt;/strong&gt; erlaubt Push- und E-Mail-Bestellbestätigungen ein- oder auszuschalten. &lt;strong&gt;Datenschutz&lt;/strong&gt; steuert, ob Name und Foto für andere sichtbar sind, wenn man bei einem Pizza-Tag zusagt." data-en="&lt;strong&gt;Notifications&lt;/strong&gt; lets customers toggle push and email order confirmations. &lt;strong&gt;Privacy&lt;/strong&gt; controls whether their name and photo are shown to others when they RSVP to a Pizza Day."><strong>Benachrichtigungen</strong> erlaubt Push- und E-Mail-Bestellbestätigungen ein- oder auszuschalten. <strong>Datenschutz</strong> steuert, ob Name und Foto für andere sichtbar sind, wenn man bei einem Pizza-Tag zusagt.</p>
+        </div>
+        <div class="art"><img src="shots/profile.jpg" width="240" height="521" loading="lazy" alt="Mein Profil"></div>
+      </div>
+    </div>
+
+    <div class="detail alt" style="text-align:center;">
+      <div class="wrap">
+        <div class="num" style="margin:0 auto 12px;">5</div>
+        <h3 data-de="Eigene Pizzeria eröffnen?" data-en="Want to open your own affiliate?" style="font-size:24px; margin-bottom:12px;">Eigene Pizzeria eröffnen?</h3>
+        <p data-de="Die App ist nicht auf San Marco Pizza beschränkt. Jeder kann seine eigene Pizzeria damit betreiben – eigenes Menü, eigene Pizza-Tage, eigene Kunden." data-en="The app isn't limited to San Marco Pizza. Anyone can run their own pizzeria on it – their own menu, their own Pizza Days, their own customers." style="color:var(--muted); max-width:600px; margin:0 auto 16px;">Die App ist nicht auf San Marco Pizza beschränkt. Jeder kann seine eigene Pizzeria damit betreiben – eigenes Menü, eigene Pizza-Tage, eigene Kunden.</p>
+        <p data-de="Kein Problem – melde dich bei uns, und wir richten dir einen Code ein, um deine eigene Pizzeria zu starten." data-en="No problem – get in touch with us and we'll set you up with a code to start your own pizzeria." style="color:var(--muted); max-width:600px; margin:0 auto 24px;">Kein Problem – melde dich bei uns, und wir richten dir einen Code ein, um deine eigene Pizzeria zu starten.</p>
+        <a href="support.html" data-de="Kontakt aufnehmen" data-en="Get in contact with us" class="btn" style="background:var(--tomato); color:#fff;">Kontakt aufnehmen</a>
+      </div>
+    </div>
+  </div>
+
   <footer>
     <div>
       <a href="privacy.html" data-de="Datenschutz" data-en="Privacy">Datenschutz</a>
@@ -210,7 +310,10 @@
       function apply(lang) {
         document.documentElement.lang = lang;
         document.querySelectorAll('[data-' + lang + ']').forEach(function (el) {
-          el.textContent = el.getAttribute('data-' + lang);
+          el.innerHTML = el.getAttribute('data-' + lang);
+        });
+        document.querySelectorAll('[data-' + lang + '-href]').forEach(function (el) {
+          el.setAttribute('href', el.getAttribute('data-' + lang + '-href'));
         });
         buttons.forEach(function (b) {
           b.classList.toggle('active', b.getAttribute('data-lang') === lang);
