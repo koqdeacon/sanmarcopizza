@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>San Marco Pizza — Stripe Setup</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+      background: #F5EFE0;
+      color: #111112;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+      text-align: center;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      padding: 40px 32px;
+      max-width: 420px;
+      width: 100%;
+    }
+    .banner {
+      background: #B93A32;
+      color: #F5EFE0;
+      font-weight: 700;
+      font-size: 22px;
+      font-style: italic;
+      border-radius: 10px;
+      padding: 10px 0;
+      margin-bottom: 28px;
+    }
+    h1 { font-size: 20px; margin-bottom: 12px; }
+    p  { font-size: 15px; line-height: 1.5; margin-bottom: 10px; color: #444; }
+    .de { color: #777; font-size: 14px; }
+    .divider { border: none; border-top: 1px solid #eee; margin: 20px 0; }
+    .btn {
+      display: inline-block;
+      background: #2E7D32;
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 10px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="banner">San Marco</div>
+    <h1>Stripe setup</h1>
+    <p>Returning to the San Marco Pizza app&hellip;</p>
+    <p>If nothing happens, tap the button below on the iPhone where you started this.</p>
+    <p class="de">Öffne diesen Link auf dem iPhone, auf dem du die Einrichtung gestartet hast, und tippe auf den Button.</p>
+    <a id="open-btn" class="btn" href="#">Open the app / App öffnen</a>
+    <hr class="divider">
+    <p class="de">No app on this device? Open this link on your iPhone with San Marco Pizza installed.<br>
+    Kein App auf diesem Gerät? Öffne den Link auf deinem iPhone mit der San-Marco-Pizza-App.</p>
+  </div>
+
+  <script>
+    (function () {
+      // Stripe's Account Links API requires https:// refresh_url/return_url —
+      // it rejects custom app URL schemes outright. This page is that https
+      // landing point; it just forwards straight into the app via the same
+      // custom scheme deep link the rest of the app already uses.
+      // ?kind=return or ?kind=refresh, set by the edge function that
+      // generated this URL — everything else (affiliate_id) passes through.
+      var params = new URLSearchParams(window.location.search);
+      var kind = params.get('kind') === 'refresh' ? 'refresh' : 'return';
+      var appUrl = 'sanmarcopizza://stripe-onboarding-' + kind + window.location.search;
+
+      document.getElementById('open-btn').setAttribute('href', appUrl);
+
+      // Try automatically; the button stays as a manual fallback.
+      window.location.href = appUrl;
+    })();
+  </script>
+</body>
+</html>
