@@ -9,7 +9,7 @@ Prices are avoided or cropped where possible.
 | `home.jpg` | Home — the Pizza Day hero + next-order card | current (Sep 2026) |
 | `menu.jpg` | Menu — pizzas with ingredients / allergens / cm sizes | current — **prices manually blurred** |
 | `myorders.jpg` | My Orders — Bakers Day group + the 4-dot progress rail | current |
-| `profile.jpg` | My Profile | current |
+| `profile.jpg` | My Profile — email row redacted | current |
 | `bakingschedule.jpg` | Owner: Baking Schedule (Queue view) — used only in `anleitung.html` | current |
 
 To refresh: replace a file with a fresh capture at roughly the same
