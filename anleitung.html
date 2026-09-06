@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anleitung – San Marco Pizza</title>
+  <meta name="description" content="Anleitung zur San Marco Pizza App: alle Funktionen für Kundschaft und für Pizzeria-Inhaber:innen.">
+  <meta name="theme-color" content="#C8402F">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍕</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <span class="logo" aria-hidden="true">🍕</span>
+    <span class="brand"><a href="/">San Marco Pizza</a></span>
+    <a class="navlink" href="/" data-de="← Startseite" data-en="← Home">← Startseite</a>
+    <div class="langtoggle" role="group" aria-label="Language">
+      <button type="button" data-lang="de">DE</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <div class="manual-hero">
+    <div class="wrap">
+      <h1>Anleitung</h1>
+      <p>Alle Funktionen der San Marco Pizza App – einmal für Kundinnen und Kunden,
+         einmal für Pizzeria-Inhaber:innen.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="tabs" role="tablist">
+      <button type="button" data-tab="customer" class="active">Für Kundschaft</button>
+      <button type="button" data-tab="owner">Für Inhaber:innen</button>
+    </div>
+
+    <p id="en-note" hidden style="text-align:center;color:var(--muted);font-size:14px;margin:8px 0;">
+      This guide is currently available in German only.
+    </p>
+
+    <!-- ============================ CUSTOMER ============================ -->
+    <div class="manual" id="customer">
+      <nav class="toc">
+        <strong>Inhalt</strong>
+        <a href="#c-konto">1 · Konto erstellen &amp; einer Pizzeria beitreten</a>
+        <a href="#c-start">2 · Der Startbildschirm</a>
+        <a href="#c-pizzatag">3 · An einem Pizza-Tag bestellen</a>
+        <a href="#c-backtag">4 · An einem Backtag bestellen</a>
+        <a href="#c-komme">5 · „Ich komme!" – Teilnahme zusagen</a>
+        <a href="#c-bestellungen">6 · Meine Bestellungen</a>
+        <a href="#c-bezahlung">7 · Bezahlung</a>
+        <a href="#c-profil">8 · Profil &amp; Einstellungen</a>
+        <a href="#c-browser">9 · Ohne iPhone: im Browser bestellen</a>
+      </nav>
+
+      <article id="c-konto">
+        <h3>1 · Konto erstellen &amp; einer Pizzeria beitreten</h3>
+        <p>Beim ersten Öffnen landest du auf dem Anmeldebildschirm. Tippe auf
+          <strong>„Konto erstellen"</strong>, gib Name, E-Mail und ein Passwort ein.
+          Du kannst dabei ankreuzen, ob du E-Mails über neue Pizza-Tage bekommen
+          möchtest.</p>
+        <p>Ein Konto allein reicht nicht zum Bestellen – du musst auch
+          <strong>Mitglied einer Pizzeria</strong> sein. Das geht auf zwei Wegen:</p>
+        <ul>
+          <li><strong>QR-Karte scannen:</strong> Richte die iPhone-Kamera auf die
+            QR-Karte deiner Pizzeria – du wirst automatisch aufgenommen.</li>
+          <li><strong>Aktionscode eingeben:</strong> Tippe den Code aus dem Laden
+            ein – direkt nach der Anmeldung oder später unter
+            <span class="kbd">Profil → Code einlösen</span>.</li>
+        </ul>
+        <p class="tip">Nur schauen? Tippe auf <strong>„Menü ansehen"</strong> –
+          die Speisekarte ist ohne Konto einsehbar.</p>
+      </article>
+
+      <article id="c-start">
+        <h3>2 · Der Startbildschirm</h3>
+        <p>Oben siehst du den <strong>nächsten Termin</strong> als große Karte:
+          Pizza-Tag in Rot, Backtag in Grün. Sind mehrere geplant, wische oder
+          nutze die Pfeile <span class="kbd">‹ ›</span>, um zwischen ihnen zu
+          wechseln.</p>
+        <p>Kündigt deine Pizzeria einen neuen Termin an, erscheint dazu ein
+          <strong>Hinweisbanner</strong>. Hast du eine offene Bestellung, zeigt
+          eine Zeile deine <strong>nächste Abholung</strong>.</p>
+        <p>Über <strong>Speisekarte</strong>, <strong>Bestellungen</strong> und
+          <strong>Profil</strong> (unten bzw. oben rechts) erreichst du alles Weitere.</p>
+      </article>
+
+      <article id="c-pizzatag">
+        <h3>3 · An einem Pizza-Tag bestellen</h3>
+        <p>Ein Pizza-Tag ist ein geplantes gemeinsames Back-Event mit festen
+          <strong>Abholzeiten in Zeitfenstern</strong>.</p>
+        <ol style="margin:0 0 10px 20px;">
+          <li>Auf der Startkarte oder im Menü auf <strong>„Pizza bestellen"</strong>
+            tippen.</li>
+          <li>Pizzen und Größen wählen. Jede Pizza zeigt Zutaten und EU-Allergene;
+            die Größe steht in cm, wenn die Pizzeria das hinterlegt hat.</li>
+          <li>Optional ein <strong>Getränk</strong> dazunehmen.</li>
+          <li>Eine freie <strong>Abholzeit</strong> aussuchen. Bei mehreren Pizzen
+            bekommst du aufeinanderfolgende Zeitfenster – du siehst sofort, wann
+            alles fertig ist.</li>
+          <li>Übersicht prüfen, optional eine Nachricht an die Pizzeria schreiben,
+            <strong>verbindlich bestellen</strong>.</li>
+        </ol>
+        <p>Jeder Pizza-Tag hat eine <strong>Bestellfrist</strong> und eine
+          <strong>Stornofrist</strong> – beide stehen auf der Karte. Ist die
+          Bestellfrist vorbei, steht dort „Bestellung geschlossen".</p>
+      </article>
+
+      <article id="c-backtag">
+        <h3>4 · An einem Backtag bestellen</h3>
+        <p>Ein Backtag („Backtag") ist eine Bäckerei-Vorbestellung: Brötchen,
+          Brezn und andere Backwaren. <strong>Keine Zeitfenster</strong> – es gibt
+          ein <strong>Abholfenster</strong>, in dem du jederzeit kommen kannst.</p>
+        <ol style="margin:0 0 10px 20px;">
+          <li>Auf der grünen Startkarte auf <strong>„Bestellen"</strong> tippen.</li>
+          <li>Mengen je Artikel wählen, optional eine Nachricht schreiben.</li>
+          <li><strong>Verbindlich bestellen.</strong> Bezahlung bar bei Abholung.</li>
+        </ol>
+        <p>Du kannst außerdem <strong>„Ich komme!"</strong> antippen (siehe unten) –
+          das ist unabhängig davon, ob du bestellst.</p>
+      </article>
+
+      <article id="c-komme">
+        <h3>5 · „Ich komme!" – Teilnahme zusagen</h3>
+        <p>Auf der Detailseite eines Pizza-Tags oder Backtags kannst du mit
+          <strong>„Ich komme!"</strong> zusagen. Das ist <strong>getrennt vom
+          Bestellen</strong> – eine Zusage ist keine Bestellung.</p>
+        <p>Wer zugesagt hat, sieht man unter <strong>„Wer kommt"</strong>. Ob dein
+          <strong>Name und Foto</strong> dort für andere Mitglieder sichtbar sind,
+          steuerst du im Profil unter „Wer mich sehen kann".</p>
+        <p>Abmelden geht jederzeit über dieselbe Schaltfläche.</p>
+      </article>
+
+      <article id="c-bestellungen">
+        <h3>6 · Meine Bestellungen</h3>
+        <p>Unter <strong>Bestellungen</strong> sind alle deine Bestellungen nach
+          Termin gruppiert – jeder Pizza-Tag und Backtag mit seinen Bestellungen
+          zusammen.</p>
+        <ul>
+          <li><strong>Fortschritt:</strong> eine Leiste von „Bestellt" über „Im
+            Ofen" und „Fertig" bis „Abgeholt". Du bekommst eine Mitteilung, wenn
+            deine Bestellung im Ofen ist und wenn sie abholbereit ist.</li>
+          <li><strong>Stornieren:</strong> möglich, solange die Stornofrist des
+            Termins noch nicht erreicht ist – über die Schaltfläche in der
+            Bestellung oder durch Wischen.</li>
+          <li><strong>Stornierte</strong> Bestellungen sind ausgeblendet; über
+            „Stornierte anzeigen" im Bereich „Vergangen" holst du sie zurück.</li>
+          <li><strong>Als PDF speichern</strong> (im Browser: „Als PDF speichern /
+            drucken") gibt dir eine Übersicht all deiner Bestellungen.</li>
+        </ul>
+      </article>
+
+      <article id="c-bezahlung">
+        <h3>7 · Bezahlung</h3>
+        <p><strong>Bar bei Abholung</strong> ist immer möglich. Bietet deine
+          Pizzeria es an, kannst du beim Bestellen auch mit <strong>Apple Pay oder
+          Karte</strong> zahlen – der Betrag wird dann erst nach Bestätigung durch
+          die Pizzeria eingezogen. In der Browser-Version ist nur Barzahlung
+          möglich.</p>
+        <p>Es werden nur Waren zur Abholung im Laden verkauft – keine Lieferung.</p>
+      </article>
+
+      <article id="c-profil">
+        <h3>8 · Profil &amp; Einstellungen</h3>
+        <ul>
+          <li><strong>Name &amp; Foto:</strong> antippen, um ein Profilfoto zu
+            wählen; Namen bearbeiten und speichern.</li>
+          <li><strong>Mitteilungen:</strong> E-Mails der App (Ankündigungen neuer
+            Termine, Bestellbestätigungen) ein-/ausschalten. Push-Mitteilungen
+            steuerst du in den iPhone-Einstellungen.</li>
+          <li><strong>Wer mich sehen kann:</strong> ob Name und Foto anderen
+            Mitgliedern angezeigt werden, wenn du „Ich komme!" antippst – mit
+            Vorschau.</li>
+          <li><strong>Meine Pizzerien:</strong> zwischen mehreren beigetretenen
+            Pizzerien wechseln, eine verlassen, einer weiteren beitreten.</li>
+          <li><strong>Konto:</strong> Passwort ändern, abmelden, Konto endgültig
+            löschen (vergangene Bestellungen bleiben anonymisiert bei der Pizzeria).</li>
+        </ul>
+      </article>
+
+      <article id="c-browser">
+        <h3>9 · Ohne iPhone: im Browser bestellen</h3>
+        <p>Hast du kein iPhone, nutze die Browser-Version:
+          <a href="https://bestellen.pizzasanmarco.org">bestellen.pizzasanmarco.org</a>.
+          Sie funktioniert auf jedem Smartphone und Computer.</p>
+        <p>Funktionsumfang wie in der App –
+          <strong>Konto, Beitritt per Code, Pizza-Tage und Backtage, Bestellen,
+          „Ich komme!", Bestellungen, Profil</strong>. Unterschiede:</p>
+        <ul>
+          <li>Benachrichtigungen nur per <strong>E-Mail</strong> (kein Push).</li>
+          <li>Bezahlung nur <strong>bar bei Abholung</strong>.</li>
+          <li>Beitritt per <strong>Code</strong> oder QR-Karte, die du mit der
+            Handy-Kamera scannst (kein Scanner in der Web-Version selbst).</li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- ============================= OWNER ============================= -->
+    <div class="manual" id="owner" hidden>
+      <nav class="toc">
+        <strong>Inhalt</strong>
+        <a href="#o-start">1 · Eine eigene Pizzeria starten</a>
+        <a href="#o-bereich">2 · Der Inhaber-Bereich</a>
+        <a href="#o-menu">3 · Speisekarte pflegen</a>
+        <a href="#o-pizzatag">4 · Einen Pizza-Tag planen</a>
+        <a href="#o-backtag">5 · Einen Backtag planen</a>
+        <a href="#o-einladen">6 · Kundschaft einladen</a>
+        <a href="#o-bestellungen">7 · Bestellungen bearbeiten</a>
+        <a href="#o-backplan">8 · Backplan verfolgen</a>
+        <a href="#o-benachrichtigen">9 · Kundschaft benachrichtigen</a>
+        <a href="#o-umsatz">10 · Umsatzbericht</a>
+        <a href="#o-zahlungen">11 · Zahlungen per Karte (optional)</a>
+        <a href="#o-einstellungen">12 · Pizzeria-Einstellungen</a>
+      </nav>
+
+      <article id="o-start">
+        <h3>1 · Eine eigene Pizzeria starten</h3>
+        <p>Die App ist nicht auf San Marco Pizza beschränkt – jede:r kann eine
+          eigene Pizzeria betreiben: eigenes Menü, eigene Pizza-Tage und Backtage,
+          eigene Kundschaft.</p>
+        <p><a href="support.html">Melde dich bei uns</a> – du bekommst einen
+          <strong>Startcode</strong>. In der App unter
+          <span class="kbd">Profil → Pizzeria beitreten oder gründen → eigene
+          gründen</span> den Code einlösen. Danach erscheint auf deinem
+          Startbildschirm der <strong>Inhaber-Bereich</strong>.</p>
+      </article>
+
+      <article id="o-bereich">
+        <h3>2 · Der Inhaber-Bereich</h3>
+        <p>Unter deinem nächsten Termin erscheinen auf dem Startbildschirm
+          zusätzliche Karten:</p>
+        <ul>
+          <li><strong>Termine:</strong> Pizza-Tage verwalten, Backtage verwalten,
+            Bestellungen nach Tag, Backplan verfolgen (Pizza + Backtag).</li>
+          <li><strong>Menü:</strong> Pizzen verwalten, Getränke &amp; Backwaren
+            verwalten.</li>
+          <li><strong>Kundschaft:</strong> Kundschaft einladen (QR-Karten &amp;
+            Codes), Mitglieder verwalten.</li>
+          <li><strong>Business:</strong> Umsatzbericht, Zahlungseinstellungen,
+            Pizzeria-Einstellungen.</li>
+        </ul>
+      </article>
+
+      <article id="o-menu">
+        <h3>3 · Speisekarte pflegen</h3>
+        <p><strong>Pizzen verwalten:</strong> Name, Foto, Zutaten, EU-Allergene und
+          Preise je Größe (Klein / Normal). Nicht verfügbare Pizzen ausblenden.</p>
+        <p><strong>Getränke &amp; Backwaren verwalten:</strong> ein Umschalter
+          trennt <em>Getränke</em> (Beilage zur Pizza-Bestellung) von
+          <em>Backwaren</em> (für Backtage). Je Artikel Name, Foto und Preis.</p>
+        <p class="tip">Die Speisekarte ist für Kundschaft auch ohne Anmeldung
+          einsehbar – Fotos und Zutaten lohnen sich.</p>
+      </article>
+
+      <article id="o-pizzatag">
+        <h3>4 · Einen Pizza-Tag planen</h3>
+        <p><span class="kbd">Termine → Pizza-Tage verwalten → +</span></p>
+        <ul>
+          <li><strong>Datum</strong> und <strong>Abholfenster</strong> (von–bis).</li>
+          <li><strong>Zeitfensterlänge</strong> – z. B. 7 Minuten pro Slot. Die App
+            erzeugt daraus die buchbaren Abholzeiten.</li>
+          <li><strong>Bestellfrist</strong> und <strong>Stornofrist</strong>
+            (Stunden vor der Abholzeit).</li>
+          <li>Optional: <strong>Titel</strong>, <strong>Gastgeber/Bäcker:in</strong>,
+            <strong>Abholort</strong>, <strong>Notiz</strong>.</li>
+          <li><strong>„Bei Bestellungen benachrichtigen"</strong>: du bekommst eine
+            Push-Mitteilung bei jeder neuen Bestellung.</li>
+        </ul>
+        <p>Die maximale Pizzen-Zahl pro Bestellung stellst du zentral in den
+          Pizzeria-Einstellungen ein.</p>
+      </article>
+
+      <article id="o-backtag">
+        <h3>5 · Einen Backtag planen</h3>
+        <p><span class="kbd">Termine → Backtage verwalten → +</span></p>
+        <p>Wie ein Pizza-Tag, aber <strong>ohne Zeitfenster</strong>: du legst nur
+          ein <strong>Abholfenster</strong> fest (Abholung ab / Abholung bis).
+          Dazu Bestell- und Stornofrist, optional Titel/Bäcker:in/Ort/Notiz und
+          „Bei Bestellungen benachrichtigen".</p>
+        <p>Die Backwaren-Auswahl pflegst du unter
+          <span class="kbd">Menü → Getränke &amp; Backwaren → Backwaren</span>.
+          Ein Pizza-Tag und ein Backtag dürfen am selben Datum stattfinden.</p>
+      </article>
+
+      <article id="o-einladen">
+        <h3>6 · Kundschaft einladen</h3>
+        <p><span class="kbd">Kundschaft → Kundschaft einladen</span></p>
+        <ul>
+          <li><strong>QR-Karte (iPhone):</strong> druckbare Karte – Kundschaft
+            scannt sie mit der iPhone-Kamera, lädt die App und tritt automatisch
+            bei.</li>
+          <li><strong>QR-Karte (Web):</strong> zweite Karte für Kundschaft ohne
+            iPhone – führt zu <em>bestellen.pizzasanmarco.org</em>.</li>
+          <li><strong>Aktionscodes:</strong> kurze Codes zum Weitergeben, mit
+            optionalem Ablaufdatum.</li>
+        </ul>
+        <p>„Neuen QR-Code erstellen" macht die alten Karten ungültig – nur nutzen,
+          wenn nötig.</p>
+      </article>
+
+      <article id="o-bestellungen">
+        <h3>7 · Bestellungen bearbeiten</h3>
+        <p><span class="kbd">Termine → Bestellungen nach Tag</span> öffnet sich auf
+          dem nächsten Termin. Oben wählst du das Datum, darunter einen Filter
+          (Aktiv / Abgeholt / Storniert / Alle).</p>
+        <p>Je Bestellung siehst du Pizzen, Getränke bzw. Backwaren, die Nachricht
+          der Kundschaft und den Status. Mit einem Wisch nach links schiebst du
+          eine Bestellung in den nächsten Status. Bestellungen von Pizza-Tagen und
+          Backtagen erscheinen beide hier.</p>
+      </article>
+
+      <article id="o-backplan">
+        <h3>8 · Backplan verfolgen</h3>
+        <p><strong>Pizza-Tage:</strong> <span class="kbd">Termine → Backplan
+          verfolgen</span>. Im Querformat eine Zeitleiste aller Bestellungen des
+          Tages; tippe und halte einen Balken, um eine Bestellung in den nächsten
+          Status zu setzen. Jede Statusänderung zeigt 5 Sekunden lang „Rückgängig".
+          Ein druckbares PDF (ein Zettel je Bestellung mit Back- und
+          Ausgabe-Checkliste sowie Kassenabgleich) findest du oben rechts.</p>
+        <p><strong>Backtage:</strong> <span class="kbd">Termine → Backtag-Plan
+          verfolgen</span>. Springt auf den aktuellen bzw. nächsten Backtag, mit
+          Vor/Zurück zwischen Terminen. „Zu backen"-Übersicht plus alle
+          Bestellungen mit Halten-zum-Weiterschieben und eigenem PDF.</p>
+      </article>
+
+      <article id="o-benachrichtigen">
+        <h3>9 · Kundschaft benachrichtigen</h3>
+        <p>In der Liste unter <span class="kbd">Pizza-Tage verwalten</span> bzw.
+          <span class="kbd">Backtage verwalten</span> gibt es je Termin ein
+          Glocken- bzw. Megafon-Symbol:</p>
+        <ul>
+          <li><strong>Push</strong> an alle Mitglieder deiner Pizzeria.</li>
+          <li><strong>E-Mail</strong> an Mitglieder, die E-Mails aktiviert haben –
+            mit allen Termindetails.</li>
+        </ul>
+        <p>Kundschaft sieht einen neuen Termin außerdem automatisch als
+          Hinweisbanner auf ihrem Startbildschirm – die Benachrichtigung ist der
+          zusätzliche Anstoß.</p>
+      </article>
+
+      <article id="o-umsatz">
+        <h3>10 · Umsatzbericht</h3>
+        <p><span class="kbd">Business → Umsatzbericht</span>. Umsatz je Tag
+          (nur abgeholte Bestellungen), aufgeschlüsselt nach Pizzen, Getränken und
+          Backwaren, mit Top-Sellern und Gesamtsumme. Ein Monatsfilter und ein
+          druckbares, gebrandetes PDF sind eingebaut. Ein Pizza-Tag und ein
+          Backtag am selben Datum werden zu einer Zeile zusammengefasst.</p>
+      </article>
+
+      <article id="o-zahlungen">
+        <h3>11 · Zahlungen per Karte (optional)</h3>
+        <p><span class="kbd">Business → Zahlungseinstellungen</span>. Standard ist
+          <strong>Barzahlung bei Abholung</strong>. Wenn du Karten- bzw.
+          Apple-Pay-Zahlung anbieten möchtest, verbindest du ein
+          <strong>Stripe-Konto</strong> (die Einnahmen gehen direkt auf dein
+          Konto, ohne Plattformgebühr). Kundschaft sieht die Kartenoption erst,
+          wenn dein Konto vollständig eingerichtet ist. Melde dich bei uns, wenn
+          du das aktivieren willst.</p>
+      </article>
+
+      <article id="o-einstellungen">
+        <h3>12 · Pizzeria-Einstellungen</h3>
+        <p><span class="kbd">Business → Pizzeria-Einstellungen</span>:</p>
+        <ul>
+          <li><strong>Name</strong> deiner Pizzeria.</li>
+          <li><strong>Pizza-Größen in cm</strong> – wird der Kundschaft im Menü
+            und beim Bestellen angezeigt (z. B. „Normal (Ø 32 cm)").</li>
+          <li><strong>Maximale Pizzen pro Bestellung</strong> (Standard 5).</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+
+  <footer>
+    <div>
+      <a href="/" data-de="Startseite" data-en="Home">Startseite</a>
+      <a href="privacy.html" data-de="Datenschutz" data-en="Privacy">Datenschutz</a>
+      <a href="support.html" data-de="Support" data-en="Support">Support</a>
+    </div>
+    <div class="copy">© <span id="y"></span> San Marco Pizza · Mittelfeld</div>
+  </footer>
+
+  <script>
+    (function () {
+      document.getElementById('y').textContent = new Date().getFullYear();
+
+      // Language toggle (shared header/footer strings only; the guide body is DE).
+      var LKEY = 'smp-lang';
+      var lbtns = document.querySelectorAll('.langtoggle button');
+      function applyLang(lang) {
+        document.documentElement.lang = lang === 'en' ? 'en' : 'de';
+        document.querySelectorAll('[data-' + lang + ']').forEach(function (el) {
+          el.innerHTML = el.getAttribute('data-' + lang);
+        });
+        lbtns.forEach(function (b) {
+          b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+        });
+        var note = document.getElementById('en-note');
+        if (note) note.hidden = lang !== 'en';
+        try { localStorage.setItem(LKEY, lang); } catch (e) {}
+      }
+      var saved; try { saved = localStorage.getItem(LKEY); } catch (e) {}
+      applyLang(saved || ((navigator.language || 'de').toLowerCase().indexOf('en') === 0 ? 'en' : 'de'));
+      lbtns.forEach(function (b) {
+        b.addEventListener('click', function () { applyLang(b.getAttribute('data-lang')); });
+      });
+
+      // Customer / owner tabs.
+      var tabs = document.querySelectorAll('.tabs button');
+      var panels = { customer: document.getElementById('customer'), owner: document.getElementById('owner') };
+      function showTab(id) {
+        panels.customer.hidden = id !== 'customer';
+        panels.owner.hidden = id !== 'owner';
+        tabs.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-tab') === id); });
+      }
+      tabs.forEach(function (b) {
+        b.addEventListener('click', function () {
+          showTab(b.getAttribute('data-tab'));
+          history.replaceState(null, '', b.getAttribute('data-tab') === 'owner' ? '#owner' : location.pathname);
+        });
+      });
+      // Deep link: #owner or #o-… opens the owner tab.
+      if (/^#(owner|o-)/.test(location.hash)) showTab('owner');
+    })();
+  </script>
+</body>
+</html>
