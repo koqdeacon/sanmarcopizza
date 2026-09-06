@@ -1,21 +1,18 @@
-# Screenshots for the website walkthrough
+# Screenshots for the website
 
-All images are portrait iPhone screenshots, displayed at 240 × 521 px
-(aspect ≈ 1206 × 2622, i.e. any modern iPhone screenshot). Optimise to
-~480 px wide JPG (~40–80 KB) before committing.
+Portrait iPhone screenshots, ~480 px wide JPG, displayed at 240 px.
+Prices are avoided or cropped where possible.
 
-**Ideally no price tags / € amounts visible** — pick screens/scroll
-positions that don't show costs, or crop the price/total rows.
+| File | Screen | Status |
+|---|---|---|
+| `signin.jpg` | Sign-in screen (logged out) | old but still accurate |
+| `home.jpg` | Home — the Pizza Day hero + next-order card | current (Sep 2026) |
+| `menu.jpg` | Menu — pizzas with ingredients / allergens / cm sizes | current — **prices manually blurred** |
+| `myorders.jpg` | My Orders — Bakers Day group + the 4-dot progress rail | current |
+| `profile.jpg` | My Profile | current |
+| `bakingschedule.jpg` | Owner: Baking Schedule (Queue view) — used only in `anleitung.html` | current |
 
-Replace each file below with a fresh capture from the current app:
-
-| File | Screen | Should show | Prices? |
-|---|---|---|---|
-| `signin.jpg` | Sign-in screen (logged out) | email/password fields, "Konto erstellen", "Menü ansehen" | none |
-| `home.jpg` | Home screen | the event hero card — ideally a **green Bakers Day** or a red Pizza Day, the swipe hint / dots, the greeting | none on the hero |
-| `pizzaday.jpg` | A Pizza Day detail page | "Ich komme!" button, "Wer kommt" list, "Abholzeiten" list | none |
-| `backtag.jpg` | A Bakers Day detail page | green hero, "Ich komme!", the "Backwaren" list, "Bestellen" button | the Backwaren list shows small € — crop below it, or accept |
-| `myorders.jpg` | My Orders | an order card with the 4-dot **progress rail** and an event header ("Pizza Day · …") | the card footer has a total — scroll so it's cut off, or crop |
-| `profile.jpg` | My Profile | identity card, "Wer mich sehen kann" toggles + preview, "Meine Pizzerien" | none |
-
-`menu.jpg` is no longer used by the site (kept for reference).
+To refresh: replace a file with a fresh capture at roughly the same
+aspect (any iPhone screenshot), keep the same filename — no HTML change
+needed. Only adjust the `height="…"` attr in the HTML if the aspect
+changes noticeably.
