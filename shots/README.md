@@ -6,7 +6,8 @@ Prices are avoided or cropped where possible.
 | File | Screen | Status |
 |---|---|---|
 | `signin.jpg` | Sign-in screen (logged out) | old but still accurate |
-| `home.jpg` | Home — the Pizza Day hero + next-order card | current (Sep 2026) |
+| `home.jpg` | Home — the Pizza Day (red) hero + next-order card | current (Sep 2026) |
+| `backtag.jpg` | Home — the Bakers Day (green) hero, paired with `home.jpg` on the "Dein nächster Termin" step to show both colors | current (Sep 2026) |
 | `menu.jpg` | Menu — pizzas with ingredients / allergens / cm sizes | current — **prices manually blurred** |
 | `myorders.jpg` | My Orders — Bakers Day group + the 4-dot progress rail | current |
 | `profile.jpg` | My Profile — email row redacted | current |
