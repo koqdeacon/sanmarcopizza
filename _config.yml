@@ -1,0 +1,3 @@
+# GitHub Pages (Jekyll) would otherwise publish CLAUDE.md as a public page.
+exclude:
+  - CLAUDE.md
