@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>San Marco Pizza — E-Mails abbestellen</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+      background: #F5EFE0;
+      color: #111112;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+      text-align: center;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      padding: 40px 32px;
+      max-width: 420px;
+      width: 100%;
+    }
+    .banner {
+      background: #B93A32;
+      color: #F5EFE0;
+      font-weight: 700;
+      font-size: 22px;
+      font-style: italic;
+      border-radius: 10px;
+      padding: 10px 0;
+      margin-bottom: 28px;
+    }
+    h1 { font-size: 20px; margin-bottom: 12px; }
+    p  { font-size: 15px; line-height: 1.5; margin-bottom: 10px; color: #444; }
+    .en { color: #777; font-size: 14px; }
+    .btn {
+      display: inline-block;
+      background: #B93A32;
+      color: #fff;
+      border: none;
+      font: inherit;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 10px;
+      margin-top: 8px;
+      cursor: pointer;
+    }
+    .btn:disabled { opacity: .6; cursor: default; }
+    .error { color: #B93A32; font-weight: 600; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="banner">San Marco</div>
+
+    <!-- Ask first: mail scanners open every link, so nothing happens on load. -->
+    <div id="ask">
+      <h1>E-Mails abbestellen?</h1>
+      <p id="what"></p>
+      <button id="btn" class="btn">Abbestellen</button>
+      <p class="en" style="margin-top:16px">Unsubscribe from these emails? Push notifications in the app are not affected.</p>
+    </div>
+
+    <div id="done" class="hidden">
+      <h1>Abgemeldet</h1>
+      <p>Du bekommst diese E-Mails nicht mehr. Einschalten kannst du sie jederzeit wieder unter „Profil“ in der App oder auf bestellen.pizzasanmarco.org.</p>
+      <p class="en">You're unsubscribed. You can switch these emails back on under “Profile” in the app.</p>
+    </div>
+
+    <div id="failed" class="hidden">
+      <h1>Das hat nicht geklappt</h1>
+      <p class="error" id="error-text"></p>
+      <p>Du kannst die E-Mails auch unter „Profil“ in der App oder auf bestellen.pizzasanmarco.org abschalten – oder einfach auf die E-Mail mit „Abmelden“ antworten.</p>
+      <p class="en">That didn't work. You can also switch the emails off under “Profile” in the app, or reply “Abmelden” to the email.</p>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var FUNCTION_URL = 'https://pgakcsizfctjxnoznfvj.supabase.co/functions/v1/email-unsubscribe';
+      var params = new URLSearchParams(window.location.search);
+      var kind = params.get('k');
+
+      function show(id) {
+        ['ask', 'done', 'failed'].forEach(function (s) {
+          document.getElementById(s).classList.toggle('hidden', s !== id);
+        });
+      }
+      function fail(text) {
+        document.getElementById('error-text').textContent = text;
+        show('failed');
+      }
+
+      if (!params.get('u') || !params.get('t') || (kind !== 'order' && kind !== 'event')) {
+        fail('Der Link ist unvollständig.');
+        return;
+      }
+      document.getElementById('what').textContent = kind === 'order'
+        ? 'Du bekommst dann keine Bestellbestätigungen und Abholzeit-Änderungen mehr per E-Mail. Push-Mitteilungen in der App bleiben, wie sie sind.'
+        : 'Du bekommst dann keine E-Mails mehr, wenn deine Pizzeria einen neuen Pizza-Tag oder Backtag ankündigt. Push-Mitteilungen in der App bleiben, wie sie sind.';
+
+      var btn = document.getElementById('btn');
+      btn.addEventListener('click', function () {
+        btn.disabled = true;
+        var query = new URLSearchParams({ u: params.get('u'), k: kind, t: params.get('t') });
+        fetch(FUNCTION_URL + '?' + query.toString(), { method: 'POST' })
+          .then(function (res) {
+            if (res.ok) { show('done'); return; }
+            fail(res.status === 403 || res.status === 400 ? 'Der Link ist ungültig.' : 'Gerade ist etwas schiefgelaufen. Bitte versuch es später noch einmal.');
+          })
+          .catch(function () {
+            btn.disabled = false;
+            fail('Keine Verbindung. Bitte versuch es später noch einmal.');
+          });
+      });
+    })();
+  </script>
+</body>
+</html>
